@@ -26,10 +26,36 @@ for (var i = 0; i < arr.length; i++){
         if(arr[i][t]==='.'){break;
         
         }else if(arr[i][t]===arr[i][t].toUpperCase()){
-            console.log(arr[i][t]);
+            var sign = arr[i][t];
+            
+            for(var key in table){
+              if(sign.toLowerCase()===key){
+                whiteCount += table[key];
+              }
+              
+            }
+        }else if(arr[i][t]===arr[i][t].toLowerCase()){
+          var sign2 = arr[i][t];
+            
+            for(var key in table){
+              if(sign2===key){
+                blackCount += table[key];
+
+              }
+              
+            }
         }
 
     }
 }
 
+function quickCompare (){
+  if (whiteCount>blackCount){
+    console.log('White');
+  } else if(blackCount > whiteCount){
+    console.log ('Black')
+  }else console.log ('draw');
+}
+
+quickCompare();
 //console.log(count);
