@@ -3,7 +3,7 @@
 //intData[2]C-стоимость лампочки
 //intData[3]D-стоимость минуты лампочки
 //(1<=N, K<=200000, 1<=C, D<=10000000000).
-var intData = [3,1,15,10];
+var intData = [190000,50000,15,10];
 var count = 0;
 //time[i][0] и time[i][1] предположительные визиты в кладовку (вход - выход) (1<=time[i][0]<time[i][1]<=10000000000)
 //посещения не пересекаются во времени и упорядочены time[i][1] < time[i+1][0];
@@ -28,7 +28,7 @@ if (time.length > 1){
     
     timeDif.sort(compareReversed); //сортируем наоборот массив из промежутков между посещениями
     
-    //если не целесообразно жеччь лампочку - то не жгем 
+    //если не целесообразно жечь лампочку - то не жгем 
     if(((timeDif[1]-timeDif[0])*intData[3])>intData[2]){
         
         //тут считаем лампы
@@ -45,9 +45,9 @@ if (time.length > 1){
     console.log('стоимость света ',(time[0][1]-time[0][0])*intData[3]," рубчиков")
     };
 
-    //насчитываем сколько света нагорело между посещениями
-    for (var i = 0; i < timeDif.length; i++){
-        CountTimeDif += timeDif[i]*intData[3];
+//насчитываем сколько света нагорело между посещениями
+for (var i = 0; i < timeDif.length; i++){
+    CountTimeDif += timeDif[i]*intData[3];
 }
 
 console.log("затраты на освещение ",(CountTime*intData[3])+(intData[2]*lamp)+CountTimeDif, ' рублей');
