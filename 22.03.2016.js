@@ -26,17 +26,9 @@ function textFail ( text ){
 		} else if ( fht + sht[ 0 ] + sht[ 1 ] != fht[ fht.length - 2 ] + fht[ fht.length - 1 ] ){
 			return 'NO';
 		}
-	}
+	} else return 'that parameter does not ordered by conditions';	
 
 	
-	
-	
-
-	var measure1 = [];
-
-	for( var i = 0; i < text.length; i++ ){
-
-	}
 }
 
 
